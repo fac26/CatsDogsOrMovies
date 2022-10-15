@@ -26,7 +26,11 @@ function showMovies(data) {
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
     movieEl.innerHTML = `
-    <img src="${IMAGE_URL + poster_path}"
+    <img src="${
+      movie.poster_path
+        ? IMAGE_URL + movie.poster_path
+        : "https://www.cinemahalls.com/wp-content/uploads/2019/10/Picture-Not-Available-1.jpg"
+    }"
     alt="${title} image"
   />
   <div class="movie-info">
@@ -34,7 +38,7 @@ function showMovies(data) {
     <span class="${getColor(vote_average)}">${vote_average}</span>
   </div>
   <div class="overview">
-    <h3>Overview</h3>
+    <h3>${title}</h3>
     ${overview}
   </div>`;
 
