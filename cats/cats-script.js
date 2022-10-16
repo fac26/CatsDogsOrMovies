@@ -1,5 +1,11 @@
 const _key = "&live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP";
 const _api = "https://api.thecatapi.com/v1/images/search";
+const headers = {
+  "content-type": "application/json",
+  "ratelimit-limit": "10000",
+  "ratelimit-remaining": "10000",
+  "ratelimit-reset": "10000",
+};
 
 const imageLimit = {
 	get1: _api + _key, //request single image
