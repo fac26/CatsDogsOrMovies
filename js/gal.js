@@ -7,8 +7,7 @@ const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 const output = document.querySelector('output');
 const submit = document.querySelector('#submit');
 
-
-// const fetchRandom = 
+// Random Postcode Section
 
 async function randomPostcodeGenerator () {
         const response = await fetch(`${randomPostcodeEndpoint}`);
