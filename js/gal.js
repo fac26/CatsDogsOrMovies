@@ -4,8 +4,15 @@ const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 
 // Selected elements
-const output = document.querySelector('output');
-const submit = document.querySelector('#submit');
+const randomPostcodeOutput = document.querySelector('#random-postcode-output');
+
+// Handle error function
+
+function handleError(err) {
+        console.log('OH NO!');
+        console.log(err);
+        // somevar.textContent = `Something went wrong: ${err}`;
+      }
 
 // Random Postcode Section
 
