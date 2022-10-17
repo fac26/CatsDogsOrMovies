@@ -1,10 +1,5 @@
 const _key = "&live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP";
 const _api = "https://api.thecatapi.com/v1/images/search";
-/* const _headers = {
-  "ratelimit-limit": "10000",
-  "ratelimit-remaining": "10000",
-  "ratelimit-reset": "10000",
-}; */ //not sure how to implement
 
 const imageLimit = {
 	//request x amount of images
@@ -12,16 +7,7 @@ const imageLimit = {
 	get5: _api + "&limit=5" + _key,
 	get10: _api + "&limit=10" + _key,
 	get20: _api + "&limit=20" + _key,
-	specificImage: _api + `${img_id}` + _key, //what?
-};
-
-//test if limit vars are working
-const checkLimitVariables = () => {
-	const value = [];
-	Object.keys(imageLimit).forEach((key) => {
-		return value.push(key);
-	});
-	console.table(value);
+	//specificImage: _api + `${img_id}` + _key, //what?
 };
 
 //clean .then(response => response.json)
@@ -51,13 +37,23 @@ const catchError = (error) => {
 	}
 };
 
-const fetch = async (url) => {
-	await fetch(url);
+const fetcher = async (url) => {
+	return await fetch((url = getResponse(url)));
 }; //not sure if this does anything here
 
-checkLimitVariables();
+//test if everything reads
+const myDebug = () => {
+	let debugCSS = ["color: #0f0", "background-color: #444", "padding: 2px 4px", "border-radius: 2px"].join(";");
 
-fetch(imageLimit.get1);
-await getResponse;
-await processResponse;
-await catchError; // ok?
+	console.log("%cmyDebug:", debugCSS, "hello");
+	console.table(imageLimit);
+};
+
+myDebug();
+
+/*
+fetcher(imageLimit.get1);
+getResponse;
+processResponse;
+catchError; // ok?
+*/
