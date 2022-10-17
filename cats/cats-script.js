@@ -10,6 +10,13 @@ const imageLimit = {
 	//specificImage: _api + `${img_id}` + _key, //what?
 };
 
+const rateHeaders = {
+	rateLimit: "ratelimit-limit",
+	rateLimitRemaining: "ratelimit-remaining",
+	rateLimitConsumed: "ratelimit-consumed",
+	rateLimitReset: "ratelimit-reset",
+};
+
 //clean .then(response => response.json)
 const getResponse = (response) => {
 	if (!response.ok) {
