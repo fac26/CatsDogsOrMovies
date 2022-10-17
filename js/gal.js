@@ -10,11 +10,13 @@ const submit = document.querySelector('#submit');
 
 // const fetchRandom = 
 
-function randomPostcodeGenerator () {
-        fetch(randomPostcodeEndpoint)
-.then(response => response.json())
-.then(randomPostcodeObj => console.log(randomPostcodeObj)
-)
+async function randomPostcodeGenerator () {
+        const response = await fetch(`${randomPostcodeEndpoint}`);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.result.postcode);
+        console.log(data.result.primary_care_trust);
+
 }
 
 randomPostcodeGenerator();
