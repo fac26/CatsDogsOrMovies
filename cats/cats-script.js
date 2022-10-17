@@ -1,13 +1,13 @@
 //declare variables
 
-const _key = "&live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP";
+const _key = "&live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP"; 
 const _api = "https://api.thecatapi.com/v1/images/search";
 
 const imageLimit = {
 	get1: _api + _key,
-	get5: _api + "&limit=5" + _key,
-	get10: _api + "&limit=10" + _key,
-	get20: _api + "&limit=20" + _key,
+	get5: `${_api}&limit=5${_key}`,
+	get10: `${_api}&limit=10${_key}`,
+	get20: `${_api}&limit=20${_key}`,
 	//specificImage: _api + `${img_id}` + _key, //what?
 };
 
@@ -41,9 +41,9 @@ const catchError = (error) => {
 
 /* 
 const fetcher = async (url) => {
-	return await fetch((url = getResponse(url)));
+  return await fetch((url = getResponse(url)));
 }; not sure if this does anything here
- */
+*/
 
 //search function use img_id
 //filter function
@@ -51,7 +51,8 @@ const fetcher = async (url) => {
 //by breed, category, name, alphebetical
 
 //test if everything reads
-const myDebug = async () => { //don't forget awaits
+const myDebug = async () => {
+	//don't forget awaits
 	let titleCSS = ["color: orange", "background-color: #444", "padding: 2px 4px", "border-radius: 2px"].join(";");
 	console.log("%cmyDebug:", titleCSS); //display title for debugging
 	console.table(imageLimit); //check searchlimit object
@@ -66,7 +67,7 @@ myDebug();
 
 //wrap fetch requests in event listeners
 
-/* 
+/*
 fetch(url, {headers}) {
 .then(getResponse)
 .then(processResponse)
