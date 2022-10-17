@@ -1,4 +1,9 @@
-const random = fetch("https://api.postcodes.io/random/postcodes");
+
+// Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.    
+const baseEndpoint = 'https://api.postcodes.io';
+const randomEndpoint = `${baseEndpoint}/random/postcodes`
+
+// Selected elements
 const output = document.querySelector('output');
 const submit = document.querySelector('#submit');
 
