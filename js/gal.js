@@ -16,6 +16,13 @@ function handleError(err) {
         // somevar.textContent = `Something went wrong: ${err}`;
       }
 
+// Capitalise first letter function 
+
+function capitaliseFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+      
+
 // Random Postcode Section
 
 async function randomPostcodeGenerator () {
@@ -23,18 +30,17 @@ async function randomPostcodeGenerator () {
         const response = await fetch(`${randomPostcodeEndpoint}`);
         const data = await response.json();
         console.log(data);
-        const keys = (Object.keys(data.result));
+        const keys = Object.keys(data.result);
+        console.log(Array.isArray(keys));
+        const values = Object.values(data.result);
         console.log(keys);
+        console.log(capitaliseFirstLetter(keys[0]));
+        console.log(values);        
         console.log(Object.entries(data.result));
-        // for (const [key, value] of Object.entries(data.result)) {
-        //         // console.log(`${key}: ${value}`);
-        //         const list = (`${key}: ${value}`);
-        //         console.log(list);
-        //       };
         console.log(data.result.primary_care_trust);
 
         randomPostcodeButton.addEventListener('click', () => {
-                randomPostcodeOutput.innerHTML = `<div>${data.result.postcode}</div>`
+                randomPostcodeOutput.innerHTML = `<p>${keys[4]}-${values[4]}</p>`
         })
 }
 
