@@ -39,13 +39,41 @@ header {
   background-color: var(--primary-color);
 }
 
-main {
+#tags {
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.tag {
+  color: white;
+  padding: 10px 20px;
+  background-color: orange;
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tag.highlight {
+  background-color: red;
+}
+
+.no-results {
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
 }
 
 .movie {
-  width: 300px;
+  width: 425px;
   margin: 1rem;
   background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -104,4 +132,150 @@ main {
 
 .movie:hover .overview {
   transform: translateY(0);
+}
+
+@media screen and (max-width: 1280px) {
+  .movie {
+    width: 375px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .movie {
+    width: 400px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .movie {
+    width: 375px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movie {
+    width: 350px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movie {
+    width: 225px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movie {
+    width: 350px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .movie {
+    width: 325px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .movie {
+    width: 225px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
 }
