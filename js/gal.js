@@ -23,7 +23,14 @@ async function randomPostcodeGenerator () {
         const response = await fetch(`${randomPostcodeEndpoint}`);
         const data = await response.json();
         console.log(data);
-        console.log(data.result.postcode);
+        const keys = (Object.keys(data.result));
+        console.log(keys);
+        console.log(Object.entries(data.result));
+        // for (const [key, value] of Object.entries(data.result)) {
+        //         // console.log(`${key}: ${value}`);
+        //         const list = (`${key}: ${value}`);
+        //         console.log(list);
+        //       };
         console.log(data.result.primary_care_trust);
 
         randomPostcodeButton.addEventListener('click', () => {
