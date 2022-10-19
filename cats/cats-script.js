@@ -16,23 +16,24 @@ const getResponse = (response) => {
   return response.json();
 }
 
-const processResponse = (data) => {
-  let imageData = data;
-  imageData.map(function(imageData) {
+const processResponse = async (data) => {
+  let imageData = await data;
+
+  await imageData.map(function(imageData) {
 
     let image = document.createElement("img");
     image.src = `${imageData.url}`;
 
     let gridCell = document.createElement('div');
-      //gridCell.classlist.add grid 
+      //gridCell.classlist.add grid
     gridCell.appendChild(image);
 
     document.querySelector('#grid').appendChild(gridCell);
   });
 }
 
-const catchErrors = (error) => {
-  console.log(error);
+const catchErrors = async (error) => {
+  console.log(await error);
 }
 
 
