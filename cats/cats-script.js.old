@@ -1,0 +1,122 @@
+/* REDUNDANT
+
+//declare variables
+
+const _key = "&live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP"; 
+const _api = "https://api.thecatapi.com/v1/images/search";
+
+const imageLimit = {
+	get1: _api + _key,
+	get5: `${_api}&limit=5${_key}`,
+	get10: `${_api}&limit=10${_key}`,
+	get20: `${_api}&limit=20${_key}`,
+	//specificImage: _api + `${img_id}` + _key, //what?
+};
+
+const rateHeaders = {
+	rateLimit: "ratelimit-limit",
+	rateLimitRemaining: "ratelimit-remaining",
+	rateLimitConsumed: "ratelimit-consumed",
+	rateLimitReset: "ratelimit-reset",
+};
+
+//clean up some functionality
+const getResponse = (response) => {
+	if (!response.ok) {
+		throw new Error(response.status);
+	}
+	return response.json();
+};
+
+const processResponse = (json) => {
+	for (let i = 0; i < json.length; i++) {
+		console.log(json[i]);
+	}
+};
+
+const catchError = (error) => {
+	for (let i = 0; i < error.length; i++) {
+		console.error(error[i]);
+	}
+};
+
+//write a reusable fetch arrow function to get data from the API and return it as JSON, then process it with a callback functionality
+
+const fetcher = async (url) => {
+  try {
+    const response = await fetch(url);
+    const json = await getResponse(response);
+    processResponse(json);
+  } catch (error) {
+    catchError(error);
+  }
+};
+
+//search function use img_id
+//filter function
+//sort function
+//by breed, category, name, alphebetical
+
+//write a debugger function to test the whole application
+
+const debuggerFunction = () => {
+  fetcher(imageLimit.get1);
+};
+
+//write a function to get the rate limit headers
+
+const getRateLimit = async (response) => {
+  const rateLimit = response.headers.get(rateHeaders.rateLimit);
+  const rateLimitRemaining = response.headers.get(rateHeaders.rateLimitRemaining);
+  const rateLimitConsumed = response.headers.get(rateHeaders.rateLimitConsumed);
+  const rateLimitReset = response.headers.get(rateHeaders.rateLimitReset);
+  console.log(await rateLimit);
+  console.log(await rateLimitRemaining);
+  console.log(await rateLimitConsumed);
+  console.log(await rateLimitReset);
+};
+
+
+//write a reusable fetch function
+
+const fetcher = async (url) => {
+  try {
+    const response = await fetch(url);
+    const json = await getResponse(response);
+    processResponse(json);
+    getRateLimit(response);
+  } catch (error) {
+    catchError(error);
+  }
+
+
+const myDebug = async () => {
+	let titleCSS = ["color: orange", "background-color: #444", "padding: 2px 4px", "border-radius: 2px"].join(";");
+
+
+
+  const response = await fetch(imageLimit);
+
+	console.log("%cmyDebug:", titleCSS); //display title for debugging
+	console.table(imageLimit); //check searchlimit object
+	//query header limits
+  console.log(await getResponse(response));
+	//console log response object
+	console.log(await catchError(error));
+};*/
+
+//wrap in event listener to debug on keypress
+myDebug();
+
+//wrap fetch requests in event listeners
+
+/*
+fetch(url, {headers}) {
+.then(getResponse)
+.then(processResponse)
+.then(catchError)
+*/
+
+//repeat per limit request
+
+
