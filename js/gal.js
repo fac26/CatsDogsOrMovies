@@ -63,6 +63,7 @@ async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}${outcode}`);
         const data = await response.json();
+        
 }
 
 randomPCUserOutcode()
