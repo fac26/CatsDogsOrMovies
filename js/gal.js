@@ -18,9 +18,10 @@ function handleError(err) {
 
 // Capitalise first letter function 
 
-function capitaliseFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
+// function capitaliseFirstLetter(string) {
+//         return string.charAt(0).toUpperCase() + string.slice(1);
+//       }
+
       
 
 // Random Postcode Section
@@ -30,7 +31,7 @@ async function randomPostcodeGenerator () {
         const response = await fetch(`${randomPostcodeEndpoint}`);
         const data = await response.json();
         console.log(data);
-        const keys = Object.keys(data.result);
+        const keys = Object.keys(data.result).map(x => x.toUpperCase());
         console.log(Array.isArray(keys));
         const values = Object.values(data.result);
         console.log(keys);
