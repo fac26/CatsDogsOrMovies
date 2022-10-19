@@ -42,7 +42,13 @@ async function randomPostcodeGenerator () {
         // console.log(data.result.primary_care_trust);
 
         randomPostcodeButton.addEventListener('click', () => {
-                randomPostcodeOutput.innerHTML = `<p>${keys[4]}-${values[4]}</p><p>${keys[0]}-${values[0]}</p><p>${keys[5]}-${values[5]}</p>`
+                randomPostcodeOutput.innerHTML = 
+                `<p>${keys[0]}-${values[0]}</p>
+                 <p>${keys[10]}-${values[10]}</p>
+                 <p>${keys[4]}-${values[4]}</p>
+                 <p>${keys[9]}-${values[9]}</p>
+                 <p>${keys[15]}-${values[15]}</p>
+                 <p>${keys[17]}-${values[17]}</p>`
         })
 }
 
