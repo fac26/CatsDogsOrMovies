@@ -44,6 +44,14 @@ async function randomPostcodeGenerator () {
         // Default loading text in case user has to wait for data 
         randomPostcodeOutput.innerHTML = `<p>...loading</p>`;
 
+        randomPostcodeOutput.innerHTML = 
+                `<p>${keys[0]}-${values[0]}</p>
+                 <p>${keys[10]}-${values[10]}</p>
+                 <p>${keys[4]}-${values[4]}</p>
+                 <p>${keys[9]}-${values[9]}</p>
+                 <p>${keys[15]}-${values[15]}</p>
+                 <p>${keys[17]}-${values[17]}</p>`
+
         randomPostcodeButton.addEventListener('click', () => {
                 randomPostcodeOutput.innerHTML = 
                 `<p>${keys[0]}-${values[0]}</p>
