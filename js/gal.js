@@ -41,6 +41,9 @@ async function randomPostcodeGenerator () {
         // console.log(Object.entries(data.result));
         // console.log(data.result.primary_care_trust);
 
+        // Default loading text in case user has to wait for data 
+        randomPostcodeOutput.innerHTML = `<p>...loading</p>`;
+
         randomPostcodeButton.addEventListener('click', () => {
                 randomPostcodeOutput.innerHTML = 
                 `<p>${keys[0]}-${values[0]}</p>
