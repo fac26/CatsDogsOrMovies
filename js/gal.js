@@ -16,6 +16,10 @@ function handleError(err) {
         // somevar.textContent = `Something went wrong: ${err}`;
       }
 
+function mapKeys (key) {
+      return Object.keys(key).map(x => capitaliseFirstLetter(x));
+}
+
 // Capitalise first letter function 
 
 function capitaliseFirstLetter(string) {
@@ -30,14 +34,14 @@ async function randomPostcodeGenerator () {
         // Variables
         const response = await fetch(`${randomPostcodeEndpoint}`);
         const data = await response.json();
-        const keys = Object.keys(data.result).map(x => capitaliseFirstLetter(x));
+        const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
-        console.log(data);
+        // console.log(data);
         // console.log(Array.isArray(keys));
-        console.log(keys);
+        // console.log(keys);
         // console.log(capitaliseFirstLetter(keys[0]));
-        console.log(values);        
+        // console.log(values);        
         // console.log(Object.entries(data.result));
         // console.log(data.result.primary_care_trust);
 
@@ -55,6 +59,14 @@ async function randomPostcodeGenerator () {
         randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 }
 
+async function randomPCUserOutcode (outcode) {
+        // Variables 
+        const response = await fetch(`${randomPostcodeEndpoint}${outcode}`);
+        const data = await response.json();
+}
+
+randomPCUserOutcode()
+.catch(handleError);
 
 randomPostcodeGenerator()
 .catch(handleError);
