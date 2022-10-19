@@ -56,7 +56,8 @@ async function randomPostcodeGenerator () {
 }
 
 
-randomPostcodeGenerator();
+randomPostcodeGenerator()
+.catch(handleError);
 
 
 
