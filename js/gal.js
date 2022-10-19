@@ -30,15 +30,16 @@ async function randomPostcodeGenerator () {
         // Variables
         const response = await fetch(`${randomPostcodeEndpoint}`);
         const data = await response.json();
-        console.log(data);
         const keys = Object.keys(data.result).map(x => capitaliseFirstLetter(x));
-        console.log(Array.isArray(keys));
         const values = Object.values(data.result);
+
+        console.log(data);
+        // console.log(Array.isArray(keys));
         console.log(keys);
-        console.log(capitaliseFirstLetter(keys[0]));
+        // console.log(capitaliseFirstLetter(keys[0]));
         console.log(values);        
-        console.log(Object.entries(data.result));
-        console.log(data.result.primary_care_trust);
+        // console.log(Object.entries(data.result));
+        // console.log(data.result.primary_care_trust);
 
         randomPostcodeButton.addEventListener('click', () => {
                 randomPostcodeOutput.innerHTML = `<p>${keys[4]}-${values[4]}</p><p>${keys[0]}-${values[0]}</p><p>${keys[5]}-${values[5]}</p>`
