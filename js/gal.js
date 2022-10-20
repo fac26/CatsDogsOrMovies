@@ -58,22 +58,27 @@ async function randomPostcodeGenerator () {
                  <p>${keys[15]}-${values[15]}</p>
                  <p>${keys[17]}-${values[17]}</p>`
 
-        randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
-}
+                }
 
-async function randomPCUserOutcode () {
+randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
+
+async function randomPCUserOutcode (outcode) {
         // Variables 
-        const response = await fetch(`${randomPostcodeEndpoint}?outcode=se6`);
+        const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
         // outcode = 'se6';
-        console.log(data);
-
-        // outcodeRandomPostcodeButton.addEventListener('click', (randomPCUserOutcode(outcodeRandomPostcodeInput.value)));
-        
+        console.log(data); 
 }
 
-randomPCUserOutcode()
-.catch(handleError);
+outcodeRandomPostcodeButton.addEventListener('click', () => {
+        const form = document.querySelector('#outcode-form');
+        const formData = new FormData(form);
+        const outcode = formData.get("outcode-random-postcode-input");
+        randomPCUserOutcode(outcode);
+});
+
+// randomPCUserOutcode()
+// .catch(handleError);
 
 randomPostcodeGenerator()
 .catch(handleError);
