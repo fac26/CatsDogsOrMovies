@@ -7,6 +7,7 @@ const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 // Selected elements
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
 const randomPostcodeButton = document.querySelector('#random-postcode-button');
+const outcodeRandomPostcodeButton = document.querySelector('#outcode-random-postcode-button');
 
 // Handle error function
 
