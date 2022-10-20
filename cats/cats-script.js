@@ -1,7 +1,7 @@
 const _key = "?api_key=live_Q6eMoEl8dw8aPgrxtXNaR2882nOcbaIfr3DCtWipUv5TWQx5wt7we7ui8YpRpYoP";
 const _api = "https://api.thecatapi.com/v1/images/search";
 
-const form = document.querySelector("form");
+const form = document.querySelector("form"); //returns null?
 
 const url = {
 	get1: _api + _key,
@@ -16,20 +16,13 @@ const getResponse = (response) => {
   return response.json();
 }
 
-const processResponse = async (data) => {
-  let imageData = await data;
+const processResponse = (imageData) => {
 
-  await imageData.map(function(imageData) {
-
-    let image = document.createElement("img");
-    image.src = `${imageData.url}`;
-
-    let gridCell = document.createElement('div');
-      //gridCell.classlist.add grid
-    gridCell.appendChild(image);
-
-    document.querySelector('#grid').appendChild(gridCell);
-  });
+  imageData.forEach(image => {
+    const img = document.createElement("img");
+    img.src = image.url;
+    document.getElementById("grid").appendChild(img);
+  })
 }
 
 const catchErrors = async (error) => {
@@ -40,7 +33,6 @@ const catchErrors = async (error) => {
 //wrap each fetch in event listener tied to button for (somefunction)
 fetch(url.get20)
   .then(getResponse)
-  .then(processResponse, () => {
-    //does this work to further process the response in addition?
-  })
+  .then(processResponse)
+  //.then(something something)
   .catch(catchErrors);
