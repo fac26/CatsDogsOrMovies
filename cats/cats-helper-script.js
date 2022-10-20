@@ -21,8 +21,11 @@ const processIntoGrid = (imageData) => {
 
   imageData.map(image => {
     const img = document.createElement("img");
+    const gridCell = document.createElement("div");
+
     img.src = image.url;
-    grid.appendChild(img);
+    gridCell.classList.add("grid--item");
+    grid.appendChild(gridCell).appendChild(img);
   })
 }
 
