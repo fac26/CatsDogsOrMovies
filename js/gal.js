@@ -61,10 +61,14 @@ async function randomPostcodeGenerator () {
         randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 }
 
-async function randomPCUserOutcode (outcode) {
+async function randomPCUserOutcode () {
         // Variables 
-        const response = await fetch(`${randomPostcodeEndpoint}${outcode}`);
+        const response = await fetch(`${randomPostcodeEndpoint}?outcode=se6`);
         const data = await response.json();
+        // outcode = 'se6';
+        console.log(data);
+
+        // outcodeRandomPostcodeButton.addEventListener('click', (randomPCUserOutcode(outcodeRandomPostcodeInput.value)));
         
 }
 
