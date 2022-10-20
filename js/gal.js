@@ -66,15 +66,14 @@ async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
-        // outcode = 'se6';
-        console.log(data); 
+        console.log(data.result); 
 }
 
 outcodeRandomPostcodeButton.addEventListener('click', () => {
         const form = document.querySelector('#outcode-form');
         const formData = new FormData(form);
         const outcode = formData.get("outcode-random-postcode-input");
-        randomPCUserOutcode(outcode);
+        randomPCUserOutcode(outcode);     
 });
 
 // randomPCUserOutcode()
