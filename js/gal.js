@@ -83,7 +83,10 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
         const form = document.querySelector('#outcode-form');
         const formData = new FormData(form);
         const outcode = formData.get("outcode-random-postcode-input");
-        randomPCUserOutcode(outcode);     
+        if (outcode === '') {
+                outcodeRandomPostcodeOutput.textContent = 'Not a valid postcode'
+        } else {randomPCUserOutcode(outcode);}
+             
 });
 
 randomPCUserOutcode('se6')
