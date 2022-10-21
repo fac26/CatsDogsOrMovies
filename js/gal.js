@@ -9,6 +9,8 @@ const randomPostcodeOutput = document.querySelector('#random-postcode-output');
 const randomPostcodeButton = document.querySelector('#random-postcode-button');
 const outcodeRandomPostcodeInput = document.querySelector('#outcode-random-postcode-input');
 const outcodeRandomPostcodeButton = document.querySelector('#outcode-random-postcode-button');
+const outcodeRandomPostcodeOutput = document.querySelector('#outcode-random-postcode-output');
+
 
 // Handle error function
 
@@ -73,6 +75,8 @@ async function randomPCUserOutcode (outcode) {
         // console.log(data.result); 
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
+
+        createInnerHTML(outcodeRandomPostcodeOutput, keys, values)
         
 }
 
