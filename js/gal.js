@@ -71,7 +71,8 @@ randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
-        const data = await response.json(); 
+        const data = await response.json();
+        // console.log(data.result); 
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
@@ -83,10 +84,8 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
         const form = document.querySelector('#outcode-form');
         const formData = new FormData(form);
         const outcode = formData.get("outcode-random-postcode-input");
-        if (outcode === '') {
-                outcodeRandomPostcodeOutput.textContent = 'Not a valid postcode'
-        } else {randomPCUserOutcode(outcode);}
-             
+        randomPCUserOutcode(outcode)
+        .catch(handleError);     
 });
 
 randomPCUserOutcode('se6')
