@@ -28,6 +28,19 @@ function capitaliseFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
 
+function createInnerHTML (el, keys, values) {
+        // Default loading text in case user has to wait for data 
+        el.innerHTML = `<p>...loading</p>`;
+
+        el.innerHTML = 
+                `<p>${keys[0]}-${values[0]}</p>
+                 <p>${keys[10]}-${values[10]}</p>
+                 <p>${keys[4]}-${values[4]}</p>
+                 <p>${keys[9]}-${values[9]}</p>
+                 <p>${keys[15]}-${values[15]}</p>
+                 <p>${keys[17]}-${values[17]}</p>`
+}
+
       
 
 // Random Postcode Section
@@ -46,17 +59,8 @@ async function randomPostcodeGenerator () {
         // console.log(values);        
         // console.log(Object.entries(data.result));
         // console.log(data.result.primary_care_trust);
-
-        // Default loading text in case user has to wait for data 
-        randomPostcodeOutput.innerHTML = `<p>...loading</p>`;
-
-        randomPostcodeOutput.innerHTML = 
-                `<p>${keys[0]}-${values[0]}</p>
-                 <p>${keys[10]}-${values[10]}</p>
-                 <p>${keys[4]}-${values[4]}</p>
-                 <p>${keys[9]}-${values[9]}</p>
-                 <p>${keys[15]}-${values[15]}</p>
-                 <p>${keys[17]}-${values[17]}</p>`
+        createInnerHTML(randomPostcodeOutput, keys, values);
+        
 
                 }
 
@@ -66,7 +70,10 @@ async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
-        console.log(data.result); 
+        // console.log(data.result); 
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+        
 }
 
 outcodeRandomPostcodeButton.addEventListener('click', () => {
