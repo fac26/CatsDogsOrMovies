@@ -76,7 +76,7 @@ async function randomPCUserOutcode (outcode) {
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
-        createInnerHTML(outcodeRandomPostcodeOutput, keys, values)
+        createInnerHTML(outcodeRandomPostcodeOutput, keys, values);
         
 }
 
