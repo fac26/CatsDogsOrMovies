@@ -140,11 +140,19 @@ main {
   align-items: center;
   justify-content: center;
   color: white;
+  transform: translate(-11px, 0);
 }
 
 .page {
   padding: 20px;
   cursor: pointer;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+}
+
+.page:hover {
+  background-color: orange;
+  transition: ease-in 0.3s;
 }
 
 .page.disabled {
@@ -153,6 +161,7 @@ main {
 }
 
 .current {
+  margin: 20px;
   padding: 10px 20px;
   border-radius: 50%;
   border: 5px solid orange;
@@ -177,6 +186,15 @@ main {
     grid-template-columns: auto auto auto;
     justify-content: center;
   }
+
+  .pagination {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transform: translate(0, 0);
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -195,6 +213,15 @@ main {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
+  }
+
+  .pagination {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transform: translate(-11px, 0);
   }
 }
 
@@ -250,6 +277,15 @@ main {
     grid-template-columns: auto auto;
     justify-content: center;
   }
+
+  .pagination {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transform: translate(-11px, 0);
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -267,6 +303,15 @@ main {
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
+  }
+
+  .pagination {
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transform: translate(0, 0);
   }
 }
 
