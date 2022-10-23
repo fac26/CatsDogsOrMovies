@@ -1,4 +1,6 @@
-fetch(url.get50)
+getBreeds();
+
+fetch(url25)
   .then(getResponse)
-  .then(processIntoGrid)
+  .then(processResponse)
   .catch(catchErrors);
