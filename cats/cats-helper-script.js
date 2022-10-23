@@ -28,7 +28,7 @@ const getResponse = (response) => {
 }
 
 const processResponse = (data) => {
-
+  grid.classList.add("grid");
   data.map(image => {
     const gridCell = document.createElement("div");
     const img = document.createElement("img");
