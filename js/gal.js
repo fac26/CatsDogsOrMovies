@@ -1,7 +1,7 @@
 // Welcome to UK Postcode Planner .js file 
 
 // Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.
-    
+
 const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 
@@ -58,7 +58,7 @@ async function randomPostcodeGenerator () {
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
-        // console.log(data);
+        console.log(data);
         // console.log(Array.isArray(keys));
         // console.log(keys);
         // console.log(capitaliseFirstLetter(keys[0]));
