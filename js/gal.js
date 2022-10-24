@@ -33,7 +33,7 @@ function capitaliseFirstLetter(string) {
 
 function createInnerHTML (el, keys, values) {
         // Default loading text in case user has to wait for data 
-        el.innerHTML = `<p>...loading</p>`;
+        el.innerHTML = `<p>...your requested data is loading dear user</p>`;
 
         el.innerHTML = 
                 `<p>${keys[0]}-${values[0]}</p>
