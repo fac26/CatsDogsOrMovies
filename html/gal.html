@@ -16,7 +16,29 @@
     </header>
 
     <main>
+      <section id="terminology">
+        <h2>Terminology Key🔑</h2>
+        <p>
+          There is some terminology you may not be familiar with dear user.
+          Below ⬇
+        </p>
+      </section>
+
       <section>
+        <h2>Getting started on your journey ⛺</h2>
+        <p>
+          To get us started beloved User lets generate some exciting, fact
+          filled <b>RaNdOm UK Postcodes</b>.
+        </p>
+      </section>
+
+      <section>
+        <p>
+          By clicking on the
+          <b>RaNdOm</b> button below you can transport yourself around the
+          United Kingdom of Great Britain and Northern Ireland gathering all the
+          essential data needed to properly plan a trip away 🛄.
+        </p>
         <form id="random-postcode-form">
           <fieldset>
             <legend>Fetch me a random UK postcode please 🤸</legend>
@@ -27,15 +49,33 @@
       </section>
 
       <section>
-        <form id="form">
+        <h2>Outcode Input</h2>
+        <p>
+          Outcode. The outcode or outward code is the part of the postcode
+          before the single space in the middle. Examples of outward codes
+          include "L1", "W1A", "RH1", "RH10" or "SE1P". A few outward codes are
+          non-geographic, not divulging where mail is to be sent. 🕵
+        </p>
+        <form id="outcode-form">
           <fieldset>
-            <legend>Control Center</legend>
+            <legend>
+              Fetch me a random UK postcode dependant on my Outcode input please
+              🤖
+            </legend>
 
-            <label for="search">Search</label>
-            <input id="search" name="search" type="search" required />
+            <label for="outcode-random-postcode-input">Outcode Input</label>
+            <input
+              id="outcode-random-postcode-input"
+              name="outcode-random-postcode-input"
+              type="search"
+              value="se6"
+              required
+            />
 
-            <button id="submit" type="submit">Submit</button>
-            <output></output>
+            <button id="outcode-random-postcode-button" type="button">
+              Submit
+            </button>
+            <output id="outcode-random-postcode-output"></output>
           </fieldset>
         </form>
       </section>
