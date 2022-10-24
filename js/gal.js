@@ -1,10 +1,12 @@
 // Welcome to UK Postcode Planner .js file 
 
-// Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.    
+// Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.
+    
 const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 
 // Selected elements
+
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
 const randomPostcodeButton = document.querySelector('#random-postcode-button');
 const outcodeRandomPostcodeInput = document.querySelector('#outcode-random-postcode-input');
@@ -21,6 +23,7 @@ function handleError(err) {
       }
 
 // Map function to loop over all keys in returned object
+
 function mapKeys (key) {
       return Object.keys(key).map(x => capitaliseFirstLetter(x));
 }
@@ -72,6 +75,7 @@ randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 // User Outcode Postcode Section
 
 // This function accepts a user generated outcode and filters results based on that input
+
 async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
