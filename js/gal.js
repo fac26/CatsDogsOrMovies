@@ -20,6 +20,7 @@ function handleError(err) {
         // somevar.textContent = `Something went wrong: ${err}`;
       }
 
+// Map function to loop over all keys in returned object
 function mapKeys (key) {
       return Object.keys(key).map(x => capitaliseFirstLetter(x));
 }
