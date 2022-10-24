@@ -76,7 +76,7 @@ async function randomPCUserOutcode (outcode) {
         if (data.result == null) {
                 outcodeRandomPostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
         } else {
-        console.log(data.result); 
+        // console.log(data.result); 
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
