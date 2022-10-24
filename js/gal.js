@@ -69,8 +69,9 @@ async function randomPostcodeGenerator () {
 
 randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 
-// User outcode postcode section
+// User Outcode Postcode Section
 
+// This function accepts a user generated outcode and filters results based on that input
 async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
