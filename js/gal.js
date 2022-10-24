@@ -73,12 +73,15 @@ async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
-        // console.log(data.result); 
+        if (data.result == null) {
+                outcodeRandomPostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
+        } else {
+        console.log(data.result); 
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
         createInnerHTML(outcodeRandomPostcodeOutput, keys, values);
-        
+        }
 }
 
 outcodeRandomPostcodeButton.addEventListener('click', () => {
