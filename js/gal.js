@@ -5,6 +5,7 @@
 const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 const uniquePostcodeEndpoint = `${baseEndpoint}/postcodes`
+
 // Selected elements
 
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
@@ -58,7 +59,7 @@ async function randomPostcodeGenerator () {
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
-        console.log(data);
+        // console.log(data);
         // console.log(Array.isArray(keys));
         // console.log(keys);
         // console.log(capitaliseFirstLetter(keys[0]));
@@ -100,6 +101,16 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
 });
 
 // Unique Postcode Section 
+
+async function uniquePostcodeGenerator (postcode) {
+        // Variables
+        const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
+        const data = await response.json();
+        console.log(data);
+}
+
+uniquePostcodeGenerator('se62hz')
+.catch(handleError);
 
 randomPCUserOutcode('se6')
 .catch(handleError);
