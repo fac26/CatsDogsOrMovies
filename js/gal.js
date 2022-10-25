@@ -4,7 +4,7 @@
 
 const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
-
+const uniquePostcodeEndpoint = `${baseEndpoint}/postcodes`
 // Selected elements
 
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
