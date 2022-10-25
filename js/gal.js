@@ -99,6 +99,8 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
         .catch(handleError);     
 });
 
+// Unique Postcode Section 
+
 randomPCUserOutcode('se6')
 .catch(handleError);
 
