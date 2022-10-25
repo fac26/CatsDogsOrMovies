@@ -1,15 +1,24 @@
 // Welcome to UK Postcode Planner .js file 
 
-// Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.    
+// Postcode API base endpoint and specific endpoints for varying methods. E.g. look up postcode, random postcode etc.
+
 const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
+const uniquePostcodeEndpoint = `${baseEndpoint}/postcodes`
+
+// Data.police.uk local force endpoint.
+const localPoliceForceEndpoint = 'https://data.police.uk/api/locate-neighbourhood'; 
 
 // Selected elements
+
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
 const randomPostcodeButton = document.querySelector('#random-postcode-button');
 const outcodeRandomPostcodeInput = document.querySelector('#outcode-random-postcode-input');
 const outcodeRandomPostcodeButton = document.querySelector('#outcode-random-postcode-button');
 const outcodeRandomPostcodeOutput = document.querySelector('#outcode-random-postcode-output');
+const uniquePostcodeInput = document.querySelector('#unique-postcode-input');
+const uniquePostcodeButton = document.querySelector('#unique-postcode-button');
+const uniquePostcodeOutput = document.querySelector('#unique-postcode-output');
 
 
 // Handle error function
@@ -19,6 +28,8 @@ function handleError(err) {
         console.log(err);
         // somevar.textContent = `Something went wrong: ${err}`;
       }
+
+// Map function to loop over all keys in returned object
 
 function mapKeys (key) {
       return Object.keys(key).map(x => capitaliseFirstLetter(x));
@@ -32,7 +43,7 @@ function capitaliseFirstLetter(string) {
 
 function createInnerHTML (el, keys, values) {
         // Default loading text in case user has to wait for data 
-        el.innerHTML = `<p>...loading</p>`;
+        el.innerHTML = `<p>...your requested data is loading dear user</p>`;
 
         el.innerHTML = 
                 `<p>${keys[0]}-${values[0]}</p>
@@ -68,16 +79,23 @@ async function randomPostcodeGenerator () {
 
 randomPostcodeButton.addEventListener('click', (randomPostcodeGenerator));
 
+// User Outcode Postcode Section
+
+// This function accepts a user generated outcode and filters results based on that input
+
 async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
+        if (data.result == null) {
+                outcodeRandomPostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
+        } else {
         // console.log(data.result); 
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
         createInnerHTML(outcodeRandomPostcodeOutput, keys, values);
-        
+        }
 }
 
 outcodeRandomPostcodeButton.addEventListener('click', () => {
@@ -87,6 +105,34 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
         randomPCUserOutcode(outcode)
         .catch(handleError);     
 });
+
+// Unique Postcode Section 
+
+async function uniquePostcodeGenerator (postcode) {
+        // Variables
+        const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
+        const data = await response.json();
+        const latitude = data.result.latitude;
+        const longitude = data.result.longitude;
+        console.log(data);
+
+        localPoliceForceGenerator(latitude, longitude)
+        .catch(handleError);
+
+}
+
+// Data Police API Section 
+
+async function localPoliceForceGenerator (latitude, longitude) {
+        // Variables
+        const response = await fetch(`${localPoliceForceEndpoint}?q=${latitude},${longitude}`);
+        const data = await response.json();
+        console.log(data);
+}
+
+
+uniquePostcodeGenerator('nr279fd')
+.catch(handleError);
 
 randomPCUserOutcode('se6')
 .catch(handleError);
