@@ -34,4 +34,4 @@ For this project we decided to build a website that invites the user to effect t
 * [x] Get Movie API Data - Users should be able look at the most popular films at the moment and make an informed decision about what to watch.
 * [X] Get Postcode API Data - Users should be able to generate a random postcode and what can be found at that postcode to help plan a trip there.  
 * [x] Plan Structure
-* [x] Complete Project
+* [ ] Complete Project
