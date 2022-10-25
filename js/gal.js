@@ -6,6 +6,9 @@ const baseEndpoint = 'https://api.postcodes.io';
 const randomPostcodeEndpoint = `${baseEndpoint}/random/postcodes`
 const uniquePostcodeEndpoint = `${baseEndpoint}/postcodes`
 
+// Data.police.uk local force endpoint.
+const localPoliceForceEndpoint = 'https://data.police.uk/api/locate-neighbourhood'; 
+
 // Selected elements
 
 const randomPostcodeOutput = document.querySelector('#random-postcode-output');
@@ -108,6 +111,16 @@ async function uniquePostcodeGenerator (postcode) {
         const data = await response.json();
         console.log(data);
 }
+
+// Data Police API Section 
+
+async function localPoliceForceGenerator (latitude, longitude) {
+        // Variables
+        const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
+        const data = await response.json();
+        console.log(data);
+}
+
 
 uniquePostcodeGenerator('se62hz')
 .catch(handleError);
