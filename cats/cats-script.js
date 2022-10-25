@@ -1,6 +1,6 @@
 getBreeds();
 
-fetch(url25)
+fetch(imageURL)
   .then(getResponse)
   .then(processResponse)
   .catch(catchErrors);

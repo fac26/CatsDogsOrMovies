@@ -1,5 +1,5 @@
 :root {
-	font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+	font-family: sans-serif;
 	text-rendering: optimizeLegibility;
 }
 
@@ -9,32 +9,57 @@
 	box-sizing: border-box;
 }
 
+body {
+  background-color: #1b1b1b;
+  margin: 0;
+}
+
+.breed--selector {
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  max-width: 80%;
+  margin: 10px auto;
+}
+
 .grid {
 	display: grid;
   grid-auto-flow: dense;
   justify-content: center;
   justify-items: center;
-  align-items: top;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
 	grid-template-rows: repeat(auto, 1fr);
-  min-width: 200px;
-  grid-gap: 10px;
-  margin: 10px;
-  border: 1px solid black;
   border-radius: 10px;
+  min-width: 150px;
+  margin: 10px;
 }
 
 .grid--item {
-  border: inherit;
   border-radius: inherit;
-  margin: 10px;
+  border: inherit;
+  margin: inherit;
+}
+
+.grid--item:hover {
+  opacity: 0.8;
 }
 
 .grid--image {
-  display: block;
   object-fit: cover;
   border-radius: inherit;
-  min-width: 150px;
   max-width: 100%;
   height: 100%;
+} 
+
+@media (min-width: 280px) {
+
+  .breed--selector {
+    max-width: 280px;
+  }
+  .grid--image {
+    min-width: 280px;
+  }
 }
