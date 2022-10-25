@@ -106,7 +106,7 @@ outcodeRandomPostcodeButton.addEventListener('click', () => {
         .catch(handleError);     
 });
 
-// Unique Postcode Section 
+// Unique Postcode Section. 
 
 async function uniquePostcodeGenerator (postcode) {
         // Variables
