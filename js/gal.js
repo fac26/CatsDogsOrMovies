@@ -109,7 +109,13 @@ async function uniquePostcodeGenerator (postcode) {
         // Variables
         const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
         const data = await response.json();
+        const latitude = data.result.latitude;
+        const longitude = data.result.longitude;
         console.log(data);
+
+        localPoliceForceGenerator(latitude, longitude)
+        .catch(handleError);
+
 }
 
 // Data Police API Section 
@@ -121,10 +127,8 @@ async function localPoliceForceGenerator (latitude, longitude) {
         console.log(data);
 }
 
-localPoliceForceGenerator(51.447469,-0.0166)
-.catch(handleError);
 
-uniquePostcodeGenerator('se62hz')
+uniquePostcodeGenerator('nr279fd')
 .catch(handleError);
 
 randomPCUserOutcode('se6')
