@@ -36,3 +36,11 @@ For this project we decided to build a website that invites the user to effect t
 * [X] Get Postcode API Data - Users should be able to generate a random postcode and what can be found at that postcode to help plan a trip there.  
 * [x] Plan Structure
 * [ ] Complete Project
+
+#### From Dogs to Postcodes
+
+Initially I was going to use the Dog API https://dog.ceo/dog-api but after looking at the documentation I decided that the ways I could use the data would be to limited. Although Dog API provides many different endpoints I felt limited by arrays of dog breeds or images of breeds.
+
+I decided to use the Postcode & Geo-location API for the UK https://postcodes.io/ as they offer many endpoints and the data is more complex, enabling me to create a user experience that is hopefully engaging, humorous and interesting.
+
+Gal
