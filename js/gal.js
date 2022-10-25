@@ -116,11 +116,13 @@ async function uniquePostcodeGenerator (postcode) {
 
 async function localPoliceForceGenerator (latitude, longitude) {
         // Variables
-        const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
+        const response = await fetch(`${localPoliceForceEndpoint}?q=${latitude},${longitude}`);
         const data = await response.json();
         console.log(data);
 }
 
+localPoliceForceGenerator(51.447469,-0.0166)
+.catch(handleError);
 
 uniquePostcodeGenerator('se62hz')
 .catch(handleError);
