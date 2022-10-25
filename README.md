@@ -27,6 +27,7 @@ For this project we decided to build a website that invites the user to effect t
 
 #### API's
 [The Movie DB](https://www.themoviedb.org/)<br>
+[The Cat API](https://thecatapi.com/)<br>
 
 #### User Journey's
 * [x] Plan Project
