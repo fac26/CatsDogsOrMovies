@@ -20,6 +20,7 @@ const uniquePostcodeInput = document.querySelector('#unique-postcode-input');
 const uniquePostcodeButton = document.querySelector('#unique-postcode-button');
 const uniquePostcodeOutput = document.querySelector('#unique-postcode-output');
 const policeDataOutput = document.querySelector('#police-data-output');
+const outcodeForm = document.querySelector('#outcode-form');
 
 
 // Handle error function
@@ -105,9 +106,10 @@ async function randomPCUserOutcode (outcode) {
         }
 }
 
-outcodeRandomPostcodeButton.addEventListener('click', () => {
-        const form = document.querySelector('#outcode-form');
-        const formData = new FormData(form);
+outcodeForm.addEventListener('submit', (e) => {
+        // const form = document.querySelector('#outcode-form');
+        e.preventDefault();
+        const formData = new FormData(outcodeForm);
         const outcode = formData.get("outcode-random-postcode-input");
         randomPCUserOutcode(outcode)
         .catch(handleError);     
