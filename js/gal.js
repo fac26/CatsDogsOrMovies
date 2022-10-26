@@ -35,6 +35,11 @@ function mapKeys (key) {
       return Object.keys(key).map(x => capitaliseFirstLetter(x));
 }
 
+// Map function to loop over all values in returned object
+function mapValues (value) {
+      return Object.values(value).map(x => capitaliseFirstLetter(x));
+}
+
 // Capitalise first letter function 
 
 function capitaliseFirstLetter(string) {
@@ -126,7 +131,7 @@ async function uniquePostcodeGenerator (postcode) {
         }
         const latitude = data.result.latitude;
         const longitude = data.result.longitude;
-        console.log(data.status);
+        console.log(data);
 
         localPoliceForceGenerator(latitude, longitude)
         .catch(handleError);
@@ -147,7 +152,11 @@ async function localPoliceForceGenerator (latitude, longitude) {
         // Variables
         const response = await fetch(`${localPoliceForceEndpoint}?q=${latitude},${longitude}`);
         const data = await response.json();
+        const keys = mapKeys(data);
+        const values = mapValues(data);
         console.log(data);
+        console.log(keys);
+        console.log(values);
 }
 
 
