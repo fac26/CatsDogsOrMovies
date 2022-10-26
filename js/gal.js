@@ -162,23 +162,8 @@ async function localPoliceForceGenerator (latitude, longitude) {
         policeDataOutput.innerHTML = 
                 `<p><b>And your local 🚨Bobbies🚨 on the beat are...</b></p>
                  <p>${keys[0]} - ${values[0]}</p>`
-
-        console.log(data);
-        console.log(keys);
-        console.log(values);
-        
-         
 }
 
-
-// uniquePostcodeGenerator('nr279fd')
-// .catch(handleError);
-
-// randomPCUserOutcode('se6')
-// .catch(handleError);
-
-// randomPostcodeGenerator()
-// .catch(handleError);
 
 
 
