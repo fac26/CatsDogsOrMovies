@@ -19,6 +19,7 @@ const outcodeRandomPostcodeOutput = document.querySelector('#outcode-random-post
 const uniquePostcodeInput = document.querySelector('#unique-postcode-input');
 const uniquePostcodeButton = document.querySelector('#unique-postcode-button');
 const uniquePostcodeOutput = document.querySelector('#unique-postcode-output');
+const policeDataOutput = document.querySelector('#police-data-output');
 
 
 // Handle error function
@@ -51,12 +52,12 @@ function createInnerHTML (el, keys, values) {
         el.innerHTML = `<p>...your requested data is loading dear user</p>`;
 
         el.innerHTML = 
-                `<p>${keys[0]}-${values[0]}</p>
-                 <p>${keys[10]}-${values[10]}</p>
-                 <p>${keys[4]}-${values[4]}</p>
-                 <p>${keys[9]}-${values[9]}</p>
-                 <p>${keys[15]}-${values[15]}</p>
-                 <p>${keys[17]}-${values[17]}</p>`
+                `<p>${keys[0]} - ${values[0]}</p>
+                 <p>${keys[10]} - ${values[10]}</p>
+                 <p>${keys[4]} - ${values[4]}</p>
+                 <p>${keys[9]} - ${values[9]}</p>
+                 <p>${keys[15]} - ${values[15]}</p>
+                 <p>${keys[17]} - ${values[17]}</p>`
 }
 
       
@@ -154,9 +155,18 @@ async function localPoliceForceGenerator (latitude, longitude) {
         const data = await response.json();
         const keys = mapKeys(data);
         const values = mapValues(data);
+
+        policeDataOutput.innerHTML = `<p>...your requested data is loading dear user</p>`;
+
+        policeDataOutput.innerHTML = 
+                `<p><b>And your local 🚨Bobbies🚨 on the beat are...</b></p>
+                 <p>${keys[0]} - ${values[0]}</p>`
+
         console.log(data);
         console.log(keys);
         console.log(values);
+        
+         
 }
 
 
