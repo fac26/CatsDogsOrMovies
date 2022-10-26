@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/gal.css" />
     <title>UK Postcode Planner</title>
   </head>
   <body>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="../cats/cats.html" class="nav-link">Cats</a>
+        </li>
+        <li class="nav-item">
+          <a href="../Movies/movies.html" class="nav-link">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link">Places</a>
+        </li>
+      </ul>
+    </nav>
     <header>
       <h1>UK Postcode Planner</h1>
       <h2>
@@ -16,14 +33,6 @@
     </header>
 
     <main>
-      <section id="terminology">
-        <h2>Terminology Key🔑</h2>
-        <p>
-          There is some terminology you may not be familiar with dear user.
-          Below ⬇
-        </p>
-      </section>
-
       <section>
         <h2>Getting started on your journey ⛺</h2>
         <p>
@@ -68,11 +77,11 @@
               id="outcode-random-postcode-input"
               name="outcode-random-postcode-input"
               type="search"
-              value="se6"
+              value=""
               required
             />
 
-            <button id="outcode-random-postcode-button" type="button">
+            <button id="outcode-random-postcode-button" type="submit">
               Submit
             </button>
             <output id="outcode-random-postcode-output"></output>
@@ -89,7 +98,7 @@
           the UK 🤩 We will also provide you with information about the local
           police force 🚔. Safe trip!
         </p>
-        <form id="unique-postcode-form">
+        <form id="unique-form">
           <fieldset>
             <legend>Fetch me a unique UK postcode please 🇬🇧</legend>
 
@@ -98,12 +107,13 @@
               id="unique-postcode-input"
               name="unique-postcode-input"
               type="search"
-              value="le16wh"
+              value=""
               required
             />
 
-            <button id="unique-postcode-button" type="button">Unique</button>
+            <button id="unique-postcode-button" type="submit">Submit</button>
             <output id="unique-postcode-output"></output>
+            <output id="police-data-output"></output>
           </fieldset>
         </form>
       </section>
