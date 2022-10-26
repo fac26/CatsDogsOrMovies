@@ -112,6 +112,8 @@ async function uniquePostcodeGenerator (postcode) {
         // Variables
         const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
         const data = await response.json();
+
+        // Logic to alert user to invalid postcode.
         if (data.status == 404) {
                 uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
         } else {
