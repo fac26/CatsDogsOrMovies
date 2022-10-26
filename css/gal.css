@@ -5,3 +5,11 @@
     --fs: 1rem;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
