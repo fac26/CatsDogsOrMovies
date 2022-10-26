@@ -133,6 +133,14 @@ async function uniquePostcodeGenerator (postcode) {
 
 }
 
+uniquePostcodeButton.addEventListener('click', () => {
+        const form = document.querySelector('#unique-form');
+        const formData = new FormData(form);
+        const uniquePostcode = formData.get("unique-postcode-input");
+        uniquePostcodeGenerator(uniquePostcode)
+        .catch(handleError);     
+});
+
 // Data Police API Section 
 
 async function localPoliceForceGenerator (latitude, longitude) {
