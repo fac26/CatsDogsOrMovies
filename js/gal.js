@@ -112,9 +112,18 @@ async function uniquePostcodeGenerator (postcode) {
         // Variables
         const response = await fetch(`${uniquePostcodeEndpoint}/${postcode}`);
         const data = await response.json();
+        if (data.status == 404) {
+                uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
+        } else {
+        // console.log(data.result); 
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+
+        createInnerHTML(uniquePostcodeOutput, keys, values);
+        }
         const latitude = data.result.latitude;
         const longitude = data.result.longitude;
-        console.log(data);
+        console.log(data.status);
 
         localPoliceForceGenerator(latitude, longitude)
         .catch(handleError);
