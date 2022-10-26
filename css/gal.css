@@ -1,1 +1,7 @@
 /* Welcome to the css style sheet for UK Postcode Planner */
+:root {
+    /* Custom properties */
+    --letter-spacing: 0.1rem;
+    --fs: 1rem;
+}
+
