@@ -9,12 +9,32 @@
   </head>
   <body>
     <header>
-      <form id="form">
-        <input type="text" id="search" class="search" placeholder="Search" />
-      </form>
+      <nav class="navbar">
+        <a href="movies.html" class="nav-branding">MovieFlix</a>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="../cats/cats.html" class="nav-link">Cats</a>
+          </li>
+          <li class="nav-item">
+            <a href="../html/gal.html" class="nav-link">Places</a>
+          </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <form class="search-menu" id="form">
+          <input type="text" id="search" class="search" placeholder="Search" />
+        </form>
+      </nav>
     </header>
+
     <div id="tags"></div>
-    <div id="myNav" class="overlay">
+    <div id="movieNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
         >&times;</a
       >
