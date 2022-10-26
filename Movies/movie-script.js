@@ -9,7 +9,8 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const tagsEl = document.getElementById("tags");
-
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
 const prev = document.getElementById("previous");
 const next = document.getElementById("next");
 const current = document.getElementById("current");
@@ -239,7 +240,7 @@ function openNav(movie) {
     .then((videoData) => {
       console.log(videoData);
       if (videoData) {
-        document.getElementById("myNav").style.width = "100%";
+        document.getElementById("movieNav").style.width = "100%";
         if (videoData.results.length > 0) {
           let embed = [];
           let dots = [];
@@ -268,11 +269,11 @@ function openNav(movie) {
         }
       }
     });
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("movieNav").style.width = "100%";
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("movieNav").style.width = "0%";
   const iframes = document.getElementsByTagName("iframe");
   if (iframes !== null) {
     for (let i = 0; i < iframes.length; i++) {
@@ -378,3 +379,15 @@ function pageCall(page) {
     getMovies(url);
   }
 }
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+document.querySelector(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);

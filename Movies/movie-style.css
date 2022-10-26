@@ -13,11 +13,69 @@ body {
   margin: 0;
 }
 
-header {
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
   padding: 1rem;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--secondary-color);
+}
+
+.nav-branding {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: white;
+  padding-left: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding-right: 2rem;
+}
+.nav-link {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  color: white;
+}
+
+.nav-link:hover {
+  background: orange;
+  transition: 0.3s all linear;
+}
+
+.hamburger {
+  position: absolute;
+  left: 25%;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  row-gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0.4rem 4rem 0 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
 }
 
 .search {
@@ -233,18 +291,16 @@ main {
 
 .arrow {
   position: absolute;
-}
-
-.arrow.left-arrow {
   top: 40%;
-  left: 10%;
   transform: translateY(-50%);
 }
 
-.arrow.right-arrow {
-  top: 40%;
-  right: 10%;
-  transform: translateY(-50%);
+.left-arrow {
+  left: 30%;
+}
+
+.right-arrow {
+  right: 30%;
 }
 
 .dots {
@@ -293,16 +349,18 @@ main {
     transform: translate(0, 0);
   }
 
-  .arrow.left-arrow {
+  .arrow {
+    position: absolute;
     top: 45%;
-    left: 10%;
     transform: translateY(-50%);
   }
 
-  .arrow.right-arrow {
-    top: 45%;
-    right: 10%;
-    transform: translateY(-50%);
+  .left-arrow {
+    left: 20%;
+  }
+
+  .right-arrow {
+    right: 20%;
   }
 }
 
@@ -333,16 +391,29 @@ main {
     transform: translate(0, 0);
   }
 
-  .arrow.left-arrow {
+  .arrow {
+    position: absolute;
     top: 60%;
-    left: 10%;
     transform: translateY(-50%);
   }
 
-  .arrow.right-arrow {
-    top: 60%;
+  .left-arrow {
+    left: 10%;
+  }
+
+  .right-arrow {
     right: 10%;
-    transform: translateY(-50%);
+  }
+
+  .dots .dot {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px;
   }
 }
 
@@ -467,6 +538,43 @@ main {
 }
 
 @media screen and (max-width: 800px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 7.5%;
+    left: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    width: 25%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
   .movie {
     width: 350px;
     margin: 1rem;
@@ -625,6 +733,33 @@ main {
     right: 10px;
     font-size: 60px;
   }
+
+  .hamburger {
+    position: absolute;
+    left: 30%;
+    flex-direction: row;
+    align-items: center;
+    row-gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 7.5%;
+    left: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    width: 35%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -681,6 +816,42 @@ main {
     top: 32.5%;
     right: 2%;
     transform: translateY(-50%);
+  }
+
+  .nav-branding {
+    display: none;
+  }
+
+  .hamburger {
+    position: absolute;
+    left: 10%;
+    flex-direction: row;
+    align-items: center;
+    row-gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 6%;
+    left: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    width: 35%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .search-menu {
+    position: relative;
+    left: 40%;
   }
 }
 
@@ -799,6 +970,11 @@ main {
     top: -20px;
     right: 10px;
     font-size: 60px;
+  }
+
+  .search-menu {
+    position: relative;
+    left: 35%;
   }
 }
 
