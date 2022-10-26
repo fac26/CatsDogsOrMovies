@@ -87,6 +87,7 @@ async function randomPCUserOutcode (outcode) {
         // Variables 
         const response = await fetch(`${randomPostcodeEndpoint}?outcode=${outcode}`);
         const data = await response.json();
+        // Logic to alert user to invalid postcode.
         if (data.result == null) {
                 outcodeRandomPostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
         } else {
