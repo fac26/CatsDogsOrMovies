@@ -38,10 +38,12 @@ For this project we decided to build a website that invites the user to effect t
 * [x] Plan Structure
 * [x] Complete Project
 
-#### From Dogs to Postcodes
+Our user is someone with some leisure time to fill and is looking for entertainment and inspiration, think young profesional in the evening. Our idea was to create a website that can be entertaining, informative and humourous the idea being that the user returns to the site more than once for more than one reason. 
 
-Initially Gal was going to use the Dog API https://dog.ceo/dog-api but after looking at the documentation they decided that the data would be to limited. Although Dog API provides many different endpoints Gal felt limited by arrays of dog breeds or images of breeds.
+#### From Dogs to Postcodes. 
 
-The decision to use the Postcode & Geo-location API for the UK https://postcodes.io/ was made as they offer many endpoints and the data is more complex, enabling a user experience that is hopefully engaging, humorous and interesting.
+Initially Gal was going to use the Dog API https://dog.ceo/dog-api but after looking at the documentation they decided that the data would be to limited and although Dog API provided many different endpoints Gal felt data that was more ambigous would allow for a more entertaiing narative. 
+
+The decision to use the Postcode & Geo-location API for the UK https://postcodes.io/ was made as they offer many endpoints and the data is more complex, enabling a user experience that is hopefully engaging, humorous and informative.
 
 Adding in the https://data.police.uk/docs/method/neighbourhood-locate/ API to return information about the local police force of the area the user is searching provides the user with more in depth information about their chosen destination.
