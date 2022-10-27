@@ -1,4 +1,4 @@
-## Niete, Karol & Gareth web mashup project
+## Niete, Karol & Gal web mashup project
 
 [Cats, places or movies?](https://fac26.github.io/CatsDogsOrMovies/)
 
