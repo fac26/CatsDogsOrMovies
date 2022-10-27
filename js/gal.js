@@ -120,14 +120,15 @@ async function uniquePostcodeGenerator (postcode) {
 
         // Logic to alert user to invalid postcode.
         if (data.status == 404) {
-                uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
+                uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥';
+                policeDataOutput.textContent = '';  
         } else {
          
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
         createInnerHTML(uniquePostcodeOutput, keys, values);
-        }
+        
 
         // Latitude and longitude are passed as values to localPoliceForceGenerator async function.
         const latitude = data.result.latitude;
@@ -136,7 +137,7 @@ async function uniquePostcodeGenerator (postcode) {
 
         localPoliceForceGenerator(latitude, longitude)
         .catch(handleError);
-
+        }
 }
 
 uniqueForm.addEventListener('submit', (e) => {
