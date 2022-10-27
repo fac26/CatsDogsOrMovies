@@ -22,7 +22,8 @@ const uniquePostcodeOutput = document.querySelector('#unique-postcode-output');
 const policeDataOutput = document.querySelector('#police-data-output');
 const outcodeForm = document.querySelector('#outcode-form');
 const uniqueForm = document.querySelector('#unique-form');
-
+const randomPostcodeFilterOutput = document.querySelector('#random-postcode-filter-output');
+const randomPostcodeFilterButton = document.querySelector('#random-postcode-filter-button');
 
 // Handle error function.
 
