@@ -32,6 +32,7 @@ function getImages(data) {
     const img = document.createElement("img");
 
     img.src = image.url;
+    img.alt = image.breeds[0]?.name || "Random Cat";
     img.classList.add("grid--image");
     gridCell.classList.add("grid--item");
 
