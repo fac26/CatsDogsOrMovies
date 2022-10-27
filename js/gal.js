@@ -166,7 +166,25 @@ async function localPoliceForceGenerator (latitude, longitude) {
                  <p>${keys[0]} - ${values[0]}</p>`
 }
 
+// Random Postcode Filter Section.
 
+// Async function to await API responses. 
+async function randomPostcodeFilterGenerator () {
+        // Variables
+        const response = await fetch(`${randomPostcodeEndpoint}`);
+        const data = await response.json();
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+        console.log(data);
+        console.log(keys);
+        console.log(values);
+        //Calling createInnerHTML function. 
+        // createInnerHTML(randomPostcodeOutput, keys, values);
+        
+
+        }
+
+randomPostcodeFilterButton.addEventListener('click', (randomPostcodeFilterGenerator));
 
 
 
