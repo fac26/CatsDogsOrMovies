@@ -13,7 +13,6 @@ function getResponse(response) {
   return response.json();
 }
 
-
 // <-- Get data on breeds from the api and assign it to the select element -->
 function getBreeds(data) {
   data.filter ((image) => { image?.url != null }) // not sure if this is necessary
@@ -30,11 +29,10 @@ function getImages(data) {
   data.map((image) => {
     const gridCell = document.createElement("div");
     const img = document.createElement("img");
-
     img.src = image.url;
+    img.alt = image.breeds[0]?.name || "Random Cat";
     img.classList.add("grid--image");
     gridCell.classList.add("grid--item");
-
     grid.appendChild(gridCell);
     gridCell.appendChild(img);
   });
