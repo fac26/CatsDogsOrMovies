@@ -22,7 +22,8 @@ const uniquePostcodeOutput = document.querySelector('#unique-postcode-output');
 const policeDataOutput = document.querySelector('#police-data-output');
 const outcodeForm = document.querySelector('#outcode-form');
 const uniqueForm = document.querySelector('#unique-form');
-
+const randomPostcodeFilterOutput = document.querySelector('#random-postcode-filter-output');
+const randomPostcodeFilterButton = document.querySelector('#random-postcode-filter-button');
 
 // Handle error function.
 
@@ -120,14 +121,15 @@ async function uniquePostcodeGenerator (postcode) {
 
         // Logic to alert user to invalid postcode.
         if (data.status == 404) {
-                uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥'  
+                uniquePostcodeOutput.textContent = 'This is not a valid postcode user 😥';
+                policeDataOutput.textContent = '';  
         } else {
          
         const keys = mapKeys(data.result);
         const values = Object.values(data.result);
 
         createInnerHTML(uniquePostcodeOutput, keys, values);
-        }
+        
 
         // Latitude and longitude are passed as values to localPoliceForceGenerator async function.
         const latitude = data.result.latitude;
@@ -136,7 +138,7 @@ async function uniquePostcodeGenerator (postcode) {
 
         localPoliceForceGenerator(latitude, longitude)
         .catch(handleError);
-
+        }
 }
 
 uniqueForm.addEventListener('submit', (e) => {
@@ -164,7 +166,41 @@ async function localPoliceForceGenerator (latitude, longitude) {
                  <p>${keys[0]} - ${values[0]}</p>`
 }
 
+// Random Postcode Filter Section.
 
+// Async function to await API responses. 
+async function randomPostcodeFilterGenerator () {
+        // Variables
+        const response = await fetch(`${randomPostcodeEndpoint}`);
+        const data = await response.json();
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+        console.log(data);
+        console.log(keys);
+        console.log(values);
+        //Calling createInnerHTML function. 
+        // createInnerHTML(randomPostcodeOutput, keys, values);
+        
 
+        }
 
+randomPostcodeFilterButton.addEventListener('click', (randomPostcodeFilterGenerator));
+
+// Create checkbox function 
+
+// Async function to await API responses. 
+async function checkboxGenerator () {
+        // Variables
+        const response = await fetch(`${randomPostcodeEndpoint}`);
+        const data = await response.json();
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+        console.log(data);
+        console.log(keys);
+        console.log(values);
+        //Calling createInnerHTML function. 
+        // createInnerHTML(randomPostcodeOutput, keys, values);
+        
+
+        }
 
