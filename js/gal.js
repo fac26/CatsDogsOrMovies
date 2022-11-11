@@ -186,5 +186,21 @@ async function randomPostcodeFilterGenerator () {
 
 randomPostcodeFilterButton.addEventListener('click', (randomPostcodeFilterGenerator));
 
+// Create checkbox function 
 
+// Async function to await API responses. 
+async function checkboxGenerator () {
+        // Variables
+        const response = await fetch(`${randomPostcodeEndpoint}`);
+        const data = await response.json();
+        const keys = mapKeys(data.result);
+        const values = Object.values(data.result);
+        console.log(data);
+        console.log(keys);
+        console.log(values);
+        //Calling createInnerHTML function. 
+        // createInnerHTML(randomPostcodeOutput, keys, values);
+        
+
+        }
 
